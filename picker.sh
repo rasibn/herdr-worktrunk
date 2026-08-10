@@ -52,7 +52,7 @@ if command -v fzf >/dev/null; then
       git for-each-ref --format='%(refname) %(refname:short)' "${branch_refs[@]}" 2>/dev/null \
         | awk '$1 !~ /\/HEAD$/ {print $2}'
     } | LC_ALL=C sort -u \
-      | fzf --print-query --reverse --info=inline --border=rounded --margin=20%,30% \
+      | fzf --print-query --reverse --info=inline --height=100% \
             --prompt='worktree ❯ ' \
             --header="↵ on a match → switch · type a new name + ↵ → create from ${create_base_label} · esc → cancel"
   )
