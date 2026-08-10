@@ -33,22 +33,22 @@ command = ["bash", "-c", "cwd=$(jq -r '.workspace_cwd // .focused_pane_cwd' <<<\
 id = "picker-default"
 title = "Worktrunk — default branch"
 placement = "popup"
-width = "80%"
-height = "80%"
+width = "55%"
+height = "55%"
 command = ["bash", "-c", "exec bash \"$HERDR_PLUGIN_ROOT/picker.sh\" --create-base=default"]
 
 [[panes]]
 id = "picker-current"
 title = "Worktrunk — current branch"
 placement = "popup"
-width = "80%"
-height = "80%"
+width = "55%"
+height = "55%"
 command = ["bash", "-c", "exec bash \"$HERDR_PLUGIN_ROOT/picker.sh\" --create-base=current"]
 
 [[panes]]
 id = "remover"
 title = "Worktrunk — remove"
 placement = "popup"
-width = "80%"
-height = "80%"
+width = "55%"
+height = "55%"
 command = ["bash", "-c", "exec bash \"$HERDR_PLUGIN_ROOT/remove.sh\""]

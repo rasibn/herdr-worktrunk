@@ -42,7 +42,7 @@ assert_remote() {
 }
 
 printf 'open_mode = "tab"\n' > "$config_dir/config.toml"   # unrelated key → default
-assert_remote false
+assert_remote true
 
 printf 'show_remote_branches = true\n' > "$config_dir/config.toml"    # bare TOML bool
 assert_remote true
@@ -51,6 +51,6 @@ printf 'show_remote_branches = "false"\n' > "$config_dir/config.toml" # quoted a
 assert_remote false
 
 printf 'show_remote_branches = maybe\n' > "$config_dir/config.toml"   # unsupported → default
-assert_remote false
+assert_remote true
 
 printf 'config tests passed\n'

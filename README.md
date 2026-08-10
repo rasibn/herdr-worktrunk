@@ -74,12 +74,13 @@ not require reinstalling or reloading the plugin.
 
 ## Remote branches in the picker
 
-By default the picker lists only your worktrees and local branches. To also
-offer remote-tracking branches (e.g. `origin/foo`; run `git fetch` yourself to
-refresh these), set `show_remote_branches` to `true` in the same `config.toml`:
+By default the picker lists your worktrees, local branches, and
+remote-tracking branches (e.g. `origin/foo`; run `git fetch` yourself to
+refresh these). To hide remote-tracking branches, set `show_remote_branches`
+to `false` in the same `config.toml`:
 
 ```toml
-show_remote_branches = true
+show_remote_branches = false
 ```
 
 Local branches without worktrees always appear regardless of this setting.

@@ -22,22 +22,22 @@ worktrunk_config_value() {
 }
 
 # Print "true"/"false" for whether the picker lists remote-tracking branches
-# (origin/foo). Disabled by default; set show_remote_branches = true to show them.
+# (origin/foo). Enabled by default; set show_remote_branches = false to hide them.
 worktrunk_show_remote_branches() {
   local value
 
   value=$(worktrunk_config_value show_remote_branches)
 
   case "$value" in
-    ""|false)
-      printf '%s\n' false
-      ;;
-    true)
+    ""|true)
       printf '%s\n' true
       ;;
-    *)
-      printf '\033[33mWarning:\033[0m unsupported show_remote_branches %q; hiding remote branches\n' "$value" >&2
+    false)
       printf '%s\n' false
+      ;;
+    *)
+      printf '\033[33mWarning:\033[0m unsupported show_remote_branches %q; showing remote branches\n' "$value" >&2
+      printf '%s\n' true
       ;;
   esac
 }
